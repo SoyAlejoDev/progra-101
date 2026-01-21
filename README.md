@@ -1,0 +1,228 @@
+# Progra 101 - Guía de Aprendizaje de JavaScript/TypeScript
+
+¡Bienvenidos a **Progra 101**! Este repositorio está diseñado como una guía práctica para estudiantes que están aprendiendo los fundamentos de la programación con JavaScript y TypeScript. Aquí encontrarás ejemplos claros y simples de los conceptos básicos más importantes.
+
+## 🎯 ¿Qué vas a aprender?
+
+Este curso cubre los conceptos fundamentales de la programación de manera práctica y progresiva. Cada sección contiene código ejecutable que puedes probar y modificar.
+
+## 📁 Estructura del Repositorio
+
+```
+progra-101/
+├── sections/                 # Ejemplos organizados por orden de estudio
+│   ├── 01-variables-y-tipos.ts           # Tipos básicos y variables
+│   ├── 02-condicionales-if-else.ts       # Condicionales básicos
+│   ├── 03-condicionales-calificaciones.ts # Evaluación con calificaciones
+│   ├── 04-switch.ts                      # Sentencia switch
+│   ├── 05-ciclos-for.ts                  # Ciclo for
+│   ├── 06-ciclos-while-do-while.ts       # Ciclos while y do-while
+│   ├── 07-bucles-tabla-multiplicar.ts    # Aplicación de bucles
+│   ├── 08-funciones-basicas.ts           # Introducción a funciones
+│   ├── 09-arrays.ts                      # Arrays y operaciones
+│   ├── 10-objetos.ts                     # Objetos y clases
+│   └── 11-ejercicios-integradores.ts     # Ejercicios que combinan todo
+├── app.ts                   # Archivo principal (actualmente vacío)
+├── package.json             # Configuración del proyecto Node.js
+└── README.md               # Esta guía
+```
+
+## 🚀 Configuración del Entorno
+
+### Prerrequisitos
+
+- [Node.js](https://nodejs.org/) (versión 16 o superior)
+- [npm](https://www.npmjs.com/) o [pnpm](https://pnpm.io/)
+
+### Instalación
+
+1. Clona este repositorio:
+```bash
+git clone <url-del-repositorio>
+cd progra-101
+```
+
+2. Instala las dependencias:
+```bash
+npm install
+# o si usas pnpm
+pnpm install
+```
+
+## ▶️ Cómo Ejecutar los Ejemplos
+
+Cada archivo en la carpeta `sections/` es un ejemplo independiente que puedes ejecutar. Usa el comando:
+
+```bash
+# Para ejecutar un ejemplo específico
+npx ts-node sections/01-variables-y-tipos.ts
+
+# Para ejecutar con watch mode (se reinicia automáticamente al cambiar)
+npm run dev:watch
+```
+
+### Scripts Disponibles
+
+- `npm run dev`: Ejecuta el archivo principal `app.ts`
+- `npm run dev:watch`: Ejecuta en modo watch para desarrollo
+
+## 🗂️ Orden de Estudio Recomendado
+
+Sigue este orden para un aprendizaje progresivo y efectivo:
+
+### 📖 **FASE 1: FUNDAMENTOS** (Semanas 1-2)
+
+#### 1. `01-variables-y-tipos.ts` - Variables y Tipos Básicos ⭐
+Aprende sobre los tipos de datos fundamentales en TypeScript/JavaScript:
+- **Strings**: Manipulación de texto con template literals
+- **Numbers**: Operaciones numéricas
+- **Booleans**: Valores verdadero/falso
+
+**Ejemplo clave:**
+```typescript
+let fullName: string = `${firstName} ${lastName}`;
+let result: number = number1 + number2;
+let isActive: boolean = true;
+```
+
+#### 2. `02-condicionales-if-else.ts` - Condicionales Básicos ⭐
+Comprende cómo tomar decisiones en tu código usando estructuras condicionales.
+
+**Conceptos:**
+- Uso de `if`, `else if`, y `else`
+- Evaluación de expresiones booleanas
+- Lógica de toma de decisiones
+
+#### 3. `03-condicionales-calificaciones.ts` - Evaluación con Calificaciones ⭐
+Aplicación práctica de condicionales para asignar letras de calificación.
+
+**Escala de calificaciones:**
+- A ≥ 90
+- B ≥ 80
+- C ≥ 70
+- D ≥ 60
+- F < 60
+
+### 🔄 **FASE 2: CONTROL DE FLUJO** (Semanas 3-4)
+
+#### 4. `04-switch.ts` - Sentencia Switch ⭐
+Alternativa a los if-else cuando tienes múltiples opciones.
+
+**Ejemplo:** Días de la semana usando switch.
+
+#### 5. `05-ciclos-for.ts` - Ciclo For ⭐⭐
+El ciclo más común para iteraciones controladas.
+
+**Conceptos:**
+- Inicialización, condición y actualización
+- Uso de `continue` para saltar iteraciones
+
+#### 6. `06-ciclos-while-do-while.ts` - Ciclos While y Do-While ⭐⭐
+Ciclos condicionales que se ejecutan mientras una condición sea verdadera.
+
+**Diferencias:**
+- **while**: Evalúa la condición ANTES de ejecutar
+- **do-while**: Ejecuta AL MENOS UNA VEZ y luego evalúa
+
+**Ejemplo:** Simulación de nivel de gasolina en un tanque.
+
+#### 7. `07-bucles-tabla-multiplicar.ts` - Aplicación de Bucles ⭐⭐
+Aplicación práctica de bucles para generar tablas de multiplicar.
+
+### 🛠️ **FASE 3: FUNCIONES Y ESTRUCTURAS DE DATOS** (Semanas 5-6)
+
+#### 8. `08-funciones-basicas.ts` - Funciones Básicas ⭐⭐
+Introducción a las funciones como bloques de código reutilizables.
+
+**Conceptos:**
+- Declaración de funciones
+- Llamadas a funciones
+- Variables locales vs globales
+
+#### 9. `09-arrays.ts` - Arrays y Operaciones ⭐⭐⭐
+Trabaja con arreglos y sus métodos principales.
+
+**Conceptos:**
+- Crear y acceder a arrays
+- Agregar/eliminar elementos (push, pop, shift, unshift)
+- Recorrer arrays (for, forEach)
+- Operaciones comunes (filter, includes, indexOf)
+
+#### 10. `10-objetos.ts` - Objetos y Clases ⭐⭐⭐
+Aprende sobre objetos, propiedades y programación orientada a objetos.
+
+**Conceptos:**
+- Crear objetos literales
+- Propiedades y métodos
+- Clases y constructores
+- Interfaces en TypeScript
+
+### 🎯 **FASE 4: PROYECTOS INTEGRADORES** (Semanas 7-8)
+
+#### 11. `11-ejercicios-integradores.ts` - Ejercicios que Combinan Todo ⭐⭐⭐⭐
+Proyectos completos que integran todos los conceptos aprendidos.
+
+**Ejercicios incluidos:**
+- **Sistema de Biblioteca**: Gestión de libros con arrays y objetos
+- **Sistema de Calificaciones**: Estudiantes con calificaciones ponderadas
+- **Juego de Adivinanza**: Lógica de juego con bucles y condicionales
+
+## 💡 Consejos para Estudiantes
+
+1. **Lee el código**: Antes de ejecutar, intenta predecir qué hará cada línea.
+
+2. **Modifica y experimenta**: Cambia los valores y observa cómo afectan el resultado.
+
+3. **Ejecuta paso a paso**: Usa `console.log()` para ver el flujo de ejecución.
+
+4. **Comenta el código**: Agrega tus propios comentarios explicando qué hace cada parte.
+
+5. **Practica en paralelo**: Crea tus propios archivos .ts con variaciones de estos ejemplos.
+
+## 🛠️ Tecnologías Utilizadas
+
+- **TypeScript**: Para tipado estático y mejor desarrollo
+- **Node.js**: Entorno de ejecución
+- **ts-node**: Para ejecutar TypeScript directamente
+- **nodemon**: Para desarrollo con recarga automática
+
+## 🎯 Proyectos Sugeridos para Practicar
+
+Después de completar todas las secciones, intenta estos proyectos:
+
+### **Proyecto 1: Calculadora Interactiva** ⭐⭐
+- Crea una calculadora que tome dos números y una operación
+- Usa condicionales para validar operaciones
+- Implementa funciones para cada operación matemática
+
+### **Proyecto 2: Lista de Tareas (To-Do List)** ⭐⭐⭐
+- Sistema para agregar, eliminar y marcar tareas como completadas
+- Usa arrays para almacenar las tareas
+- Implementa búsqueda y filtrado
+
+### **Proyecto 3: Sistema de Inventario** ⭐⭐⭐⭐
+- Gestiona productos con nombre, precio, stock y categoría
+- Implementa funciones para agregar, vender y buscar productos
+- Usa objetos y arrays para organizar los datos
+
+### **Proyecto 4: Juego de Batalla Naval** ⭐⭐⭐⭐⭐
+- Juego donde dos jugadores colocan barcos y se atacan
+- Usa arrays bidimensionales para el tablero
+- Implementa lógica de turnos y validaciones
+
+## 📝 Notas Importantes
+
+- Todos los ejemplos están en español para facilitar el aprendizaje
+- El código está diseñado para ser simple y autodidacta
+- Cada sección es independiente y puede estudiarse por separado
+- Los comentarios explican qué hace cada parte del código
+- Los ejercicios están ordenados por dificultad creciente (⭐)
+
+## 🤝 Contribuciones
+
+Si encuentras errores o quieres agregar más ejemplos, ¡las contribuciones son bienvenidas! Crea un issue o envía un pull request.
+
+---
+
+¡Feliz aprendizaje! Recuerda que la programación se aprende practicando. ¡Manos a la obra! 🚀</content>
+<parameter name="filePath">/home/alejo/Study/progra-101/README.md
