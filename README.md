@@ -58,7 +58,7 @@ progra-101/
 1. Clona este repositorio:
 
 ```bash
-git clone <url-del-repositorio>
+git clone https://github.com/SoyAlejoDev/progra-101.git
 cd progra-101
 ```
 
