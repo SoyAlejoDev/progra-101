@@ -4,7 +4,7 @@
 // Este archivo demuestra el uso básico de arrays en TypeScript.
 // Los arrays permiten almacenar múltiples valores del mismo tipo.
 
-let personas: string[] = ["Alice", "Bob", "Charlie"]; // Array de strings
+export let personas: string[] = ["Alice", "Bob", "Charlie"]; // Array de strings
 let flores: string[] = ["Rosa", "Tulipán", "Margarita"]; // Otro array de strings
 
 // Código comentado: ejemplo de cómo recorrer un array con for
