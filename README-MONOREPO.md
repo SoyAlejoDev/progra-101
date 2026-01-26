@@ -48,17 +48,23 @@ El proyecto está configurado para desplegarse automáticamente a GitHub Pages c
 
 1. Ve a la configuración de tu repositorio en GitHub
 2. En "Pages", selecciona:
-   - Source: "Deploy from a branch"
-   - Branch: `gh-pages` y `/ (root)`
-3. Activa los GitHub Actions en tu repositorio
+   - Source: "GitHub Actions"
+3. Activa los GitHub Actions en tu repositorio (si no están activados)
 
 ### Flujo de Despliegue
 
 1. Haces push a `main` o `master`
 2. GitHub Actions se activa automáticamente
-3. Construye la app React
-4. Despliega a la rama `gh-pages`
+3. Construye la app React con Vite
+4. Despliega a GitHub Pages usando Actions
 5. Tu app está disponible en: `https://[tu-usuario].github.io/progra-101/`
+
+### 🔧 Solución de Problemas
+
+Si el despliegue falla con errores de pnpm:
+- El proyecto usa pnpm 9.15.4 especificado en GitHub Actions
+- No hay conflictos con package.json
+- Los .gitignore están configurados correctamente para monorepo
 
 ## 📦 Workspaces
 
