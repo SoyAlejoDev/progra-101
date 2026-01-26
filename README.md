@@ -1,49 +1,156 @@
-# Progra 101 - Guía de Aprendizaje de JavaScript/TypeScript
+# 🎓 Progra 101 - Monorepo Educativo
 
-¡Bienvenidos a **Progra 101**! Este repositorio está diseñado como una guía práctica para estudiantes que están aprendiendo los fundamentos de la programación con JavaScript y TypeScript. Aquí encontrarás ejemplos claros y simples de los conceptos básicos más importantes.
+> **Repositorio de aprendizaje para estudiantes de programación web**  
+> Profesor: [Alejo Dev](https://github.com/SoyAlejoDev)
+
+¡Bienvenidos a **Progra 101**! Este es un **monorepo educativo** diseñado para enseñar programación web con JavaScript, TypeScript y React de manera práctica y progresiva. Aquí encontrarás ejemplos, proyectos y recursos para aprender desde lo básico hasta aplicaciones completas.
+
+## 🌟 ¿Qué encontrarás aquí?
+
+- **📚 Material de estudio**: Ejemplos progresivos de JavaScript/TypeScript
+- **🎮 Proyectos prácticos**: Aplicaciones React reales para aprender
+- **🏗️ Monorepo moderno**: Estructura profesional con pnpm workspaces
+- **🚀 Despliegue automático**: Cada proyecto se publica en GitHub Pages
+- **📖 Guías paso a paso**: Documentación para estudiantes
+
+---
+
+## 🚀 **Proyectos Actuales**
+
+### 🎮 **[HangIng - Juego del Ahorcado](https://soyalejodev.github.io/progra-101/)**
+**Tecnologías:** React 19 + TypeScript + Vite  
+**Estado:** ✅ Desplegado y funcionando  
+**Aprende:** Componentes, estado, eventos, lógica de juego
+
+---
+
+## 📁 **Estructura del Monorepo**
+
+```
+progra-101/
+├── 📚 sections/              # Material de estudio (JavaScript/TypeScript)
+│   ├── 01-variables-y-tipos.ts
+│   ├── 02-condicionales-if-else.ts
+│   ├── 03-funciones-basicas.ts
+│   ├── 04-arrays.ts
+│   ├── 05-objetos.ts
+│   └── ... (más de 11 temas)
+├── 🎮 apps/                  # Proyectos frontend desplegables
+│   └── hanging/             # Juego del Ahorcado (React + TS)
+├── 📦 packages/              # Librerías compartidas (futuro)
+├── 📝 tarea/                 # Ejercicios prácticos
+├── 🛠️ helpers/               # Funciones auxiliares
+└── ⚙️ .github/workflows/     # CI/CD automático
+```
 
 ## 🎯 ¿Qué vas a aprender?
 
 Este curso cubre los conceptos fundamentales de la programación de manera práctica y progresiva. Cada sección contiene código ejecutable que puedes probar y modificar.
 
-## 📁 Estructura del Repositorio
+## 🚀 **Configuración del Entorno**
+
+### Prerrequisitos
+
+- [Node.js](https://nodejs.org/) (versión 18 o superior)
+- [pnpm](https://pnpm.io/) (recomendado para monorepo)
+
+### Instalación
+
+1. **Clona este repositorio:**
+
+```bash
+git clone https://github.com/SoyAlejoDev/progra-101.git
+cd progra-101
+```
+
+2. **Instala las dependencias:**
+
+```bash
+pnpm install
+```
+
+## 🎮 **Cómo Usar el Monorepo**
+
+### **Para estudiar el material teórico:**
+
+```bash
+# Ejecutar un ejemplo específico
+pnpm dev:ts sections/01-variables-y-tipos.ts
+
+# Modo watch para desarrollo
+pnpm dev:watch
+```
+
+### **Para trabajar con los proyectos React:**
+
+```bash
+# Iniciar servidor de desarrollo
+pnpm dev
+
+# Construir para producción
+pnpm build
+
+# Previsualizar el build
+pnpm preview
+```
+
+### **Scripts Disponibles:**
+
+- `pnpm dev` - Iniciar servidor de desarrollo de React
+- `pnpm build` - Construir proyectos para producción
+- `pnpm preview` - Previsualizar builds locales
+- `pnpm dev:ts` - Ejecutar archivos TypeScript
+- `pnpm dev:watch` - Modo watch para TypeScript
+- `pnpm deploy` - Despliegue manual a GitHub Pages
+
+---
+
+## 📚 **Material de Estudio - Estructura Detallada**
+
+### **📖 sections/ - Teoría y Ejemplos**
 
 ```
-progra-101/
-├── sections/                 # Ejemplos organizados por orden de estudio
-│   ├── 01-variables-y-tipos.ts           # Tipos básicos y variables
-│   ├── 02-condicionales-if-else.ts       # Condicionales básicos
-│   ├── 03-condicionales-calificaciones.ts # Evaluación con calificaciones
-│   ├── 04-switch.ts                      # Sentencia switch
-│   ├── 05-ciclos-for.ts                  # Ciclo for
-│   ├── 06-ciclos-while-do-while.ts       # Ciclos while y do-while
-│   ├── 07-bucles-tabla-multiplicar.ts    # Aplicación de bucles
-│   ├── 08-funciones-basicas.ts           # Introducción a funciones
-│   ├── 09-arrays.ts                      # Arrays y operaciones
-│   ├── 10-objetos.ts                     # Objetos y clases
-│   ├── 11-ejercicios-integradores.ts     # Ejercicios que combinan todo
-│   └── examples/                         # Ejemplos adicionales
-│       ├── array.ts                      # Ejemplo básico de arrays
-│       ├── array-objects.ts              # Arrays con objetos
-│       ├── clases.ts                     # Ejemplo de clases
-│       ├── import-export.ts              # Módulos y exportaciones
-│       └── object-literal.ts             # Objetos literales
-├── tarea/                    # Tareas y ejercicios prácticos
-│   ├── tarea-1.ts            # Conversión de unidades
-│   ├── tarea-2.ts            # Conversión kilómetros a millas
-│   ├── tarea-3.ts            # Cálculo de área de círculo
-│   ├── tarea-4.ts            # Verificación de números pares
-│   ├── tarea-5.ts            # Cálculo de factorial
-│   ├── tarea-6.ts            # Suma de arrays
-│   ├── tarea-7.ts            # Búsqueda en arrays
-│   ├── tarea-8.ts            # Manipulación de strings
-│   └── tarea-9.ts            # Funciones matemáticas
-├── helpers/                  # Funciones auxiliares
-│   ├── math-helpers.ts       # Operaciones matemáticas
-│   └── print-multiplication-table.ts # Tabla de multiplicar
-├── app.ts                   # Archivo principal (actualmente vacío)
-├── package.json             # Configuración del proyecto Node.js
-└── README.md               # Esta guía
+sections/
+├── 01-variables-y-tipos.ts           # Tipos básicos y variables
+├── 02-condicionales-if-else.ts       # Condicionales básicos
+├── 03-condicionales-calificaciones.ts # Evaluación con calificaciones
+├── 04-switch.ts                      # Sentencia switch
+├── 05-ciclos-for.ts                  # Ciclo for
+├── 06-ciclos-while-do-while.ts       # Ciclos while y do-while
+├── 07-bucles-tabla-multiplicar.ts    # Aplicación de bucles
+├── 08-funciones-basicas.ts           # Introducción a funciones
+├── 09-arrays.ts                      # Arrays y operaciones
+├── 10-objetos.ts                     # Objetos y clases
+├── 11-ejercicios-integradores.ts     # Ejercicios que combinan todo
+└── examples/                         # Ejemplos adicionales
+    ├── array.ts                      # Ejemplo básico de arrays
+    ├── array-objects.ts              # Arrays con objetos
+    ├── clases.ts                     # Ejemplo de clases
+    ├── import-export.ts              # Módulos y exportaciones
+    └── object-literal.ts             # Objetos literales
+```
+
+### **📝 tarea/ - Ejercicios Prácticos**
+
+```
+tarea/
+├── tarea-1.ts            # Conversión de unidades
+├── tarea-2.ts            # Conversión kilómetros a millas
+├── tarea-3.ts            # Cálculo de área de círculo
+├── tarea-4.ts            # Verificación de números pares
+├── tarea-5.ts            # Cálculo de factorial
+├── tarea-6.ts            # Suma de arrays
+├── tarea-7.ts            # Búsqueda en arrays
+├── tarea-8.ts            # Manipulación de strings
+└── tarea-9.ts            # Funciones matemáticas
+```
+
+### **🛠️ helpers/ - Funciones Auxiliares**
+
+```
+helpers/
+├── math-helpers.ts       # Operaciones matemáticas
+└── print-multiplication-table.ts # Tabla de multiplicar
 ```
 
 ## 🚀 Configuración del Entorno
