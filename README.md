@@ -3,11 +3,11 @@
 > **Repositorio de aprendizaje para estudiantes de programación web**  
 > Profesor: [Alejo Dev](https://github.com/SoyAlejoDev)
 
-¡Bienvenidos a **Progra 101**! Este es un **monorepo educativo** diseñado para enseñar programación web con JavaScript, TypeScript y React de manera práctica y progresiva. Aquí encontrarás ejemplos, proyectos y recursos para aprender desde lo básico hasta aplicaciones completas.
+¡Bienvenidos a **Progra 101**! Este es un **monorepo educativo** diseñado para enseñar programación web con JavaScript, TypeScript y React de manera práctica y progresiva. Aquí encontrarás ejemplos, proyectos y recursos organizados por cursos.
 
 ## 🌟 ¿Qué encontrarás aquí?
 
-- **📚 Material de estudio**: Ejemplos progresivos de JavaScript/TypeScript
+- **📚 Cursos organizados**: Cada curso en su propio workspace
 - **🎮 Proyectos prácticos**: Aplicaciones React reales para aprender
 - **🏗️ Monorepo moderno**: Estructura profesional con pnpm workspaces
 - **🚀 Despliegue automático**: Cada proyecto se publica en GitHub Pages
@@ -15,44 +15,48 @@
 
 ---
 
-## 🚀 **Proyectos Actuales**
-
-### 🎮 **[HangIng - Juego del Ahorcado](https://soyalejodev.github.io/progra-101/)**
-**Tecnologías:** React 19 + TypeScript + Vite  
-**Estado:** ✅ Desplegado y funcionando  
-**Aprende:** Componentes, estado, eventos, lógica de juego
-
----
-
 ## 📁 **Estructura del Monorepo**
 
 ```
 progra-101/
-├── 📚 sections/              # Material de estudio (JavaScript/TypeScript)
-│   ├── 01-variables-y-tipos.ts
-│   ├── 02-condicionales-if-else.ts
-│   ├── 03-funciones-basicas.ts
-│   ├── 04-arrays.ts
-│   ├── 05-objetos.ts
-│   └── ... (más de 11 temas)
-├── 🎮 apps/                  # Proyectos frontend desplegables
-│   └── hanging/             # Juego del Ahorcado (React + TS)
-├── 📦 packages/              # Librerías compartidas (futuro)
-├── 📝 tarea/                 # Ejercicios prácticos
-├── 🛠️ helpers/               # Funciones auxiliares
-└── ⚙️ .github/workflows/     # CI/CD automático
+├── 📚 courses/                    # Material de estudio por curso
+│   ├── 01-programacion-basica/   # Fundamentos de JS/TS
+│   │   ├── sections/             # Ejemplos por tema
+│   │   ├── tareas/               # Ejercicios prácticos
+│   │   └── helpers/              # Funciones auxiliares
+│   ├── 02-introduccion-js-react/ # JS para React
+│   │   ├── js/                   # Código fuente
+│   │   ├── css/                  # Estilos
+│   │   └── *.html                # Páginas de ejemplo
+│   └── 03-typescript/            # TypeScript avanzado
+│       ├── tipos/                # Tipos básicos
+│       ├── funciones/            # Funciones y parámetros
+│       ├── objetos/              # Objetos y clases
+│       ├── clases/               # POO en TypeScript
+│       ├── interfaces/           # Interfaces
+│       ├── ES6/                  # Características ES6
+│       └── namespaces/           # Namespaces
+│
+├── 🎮 apps/                       # Aplicaciones desplegables
+│   └── hanging/                  # Juego del Ahorcado (React + TS)
+│
+├── 📦 packages/                   # Configuraciones compartidas
+│   └── (futuras utilidades)
+│
+├── 🛠️ Configuración
+│   ├── package.json              # Root con workspaces
+│   ├── pnpm-workspace.yaml       # Configuración de pnpm
+│   └── README.md                 # Esta documentación
 ```
 
-## 🎯 ¿Qué vas a aprender?
-
-Este curso cubre los conceptos fundamentales de la programación de manera práctica y progresiva. Cada sección contiene código ejecutable que puedes probar y modificar.
+---
 
 ## 🚀 **Configuración del Entorno**
 
 ### Prerrequisitos
 
 - [Node.js](https://nodejs.org/) (versión 18 o superior)
-- [pnpm](https://pnpm.io/) (recomendado para monorepo)
+- [pnpm](https://pnpm.io/) (versión 8 o superior)
 
 ### Instalación
 
@@ -69,19 +73,24 @@ cd progra-101
 pnpm install
 ```
 
+---
+
 ## 🎮 **Cómo Usar el Monorepo**
 
-### **Para estudiar el material teórico:**
+### **📚 Para estudiar los cursos:**
 
 ```bash
-# Ejecutar un ejemplo específico
-pnpm dev:ts sections/01-variables-y-tipos.ts
+# Curso 1: Programación Básica
+pnpm --filter @progra-101/programacion-basica dev sections/01-variables-y-tipos.ts
 
-# Modo watch para desarrollo
-pnpm dev:watch
+# Curso 2: Introducción a JS para React
+pnpm --filter @progra-101/introduccion-js-react dev js/03-variables.ts
+
+# Curso 3: TypeScript
+pnpm --filter @progra-101/typescript dev app.ts
 ```
 
-### **Para trabajar con los proyectos React:**
+### **🎮 Para trabajar con aplicaciones React:**
 
 ```bash
 # Iniciar servidor de desarrollo
@@ -94,21 +103,39 @@ pnpm build
 pnpm preview
 ```
 
-### **Scripts Disponibles:**
+### **Scripts Disponibles (Root):**
 
-- `pnpm dev` - Iniciar servidor de desarrollo de React
-- `pnpm build` - Construir proyectos para producción
-- `pnpm preview` - Previsualizar builds locales
-- `pnpm dev:ts` - Ejecutar archivos TypeScript
-- `pnpm dev:watch` - Modo watch para TypeScript
-- `pnpm deploy` - Despliegue manual a GitHub Pages
+| Script | Descripción |
+|--------|-------------|
+| `pnpm dev` | Iniciar servidor de desarrollo de React (hanging) |
+| `pnpm build` | Construir todos los proyectos |
+| `pnpm deploy` | Desplegar a GitHub Pages |
+| `pnpm typecheck` | Verificar tipos en todos los workspaces |
+| `pnpm clean` | Limpiar node_modules y builds |
 
 ---
 
-## 📚 **Material de Estudio - Estructura Detallada**
+## 📚 **Cursos Disponibles**
 
-### **📖 sections/ - Teoría y Ejemplos**
+### **Curso 1: Programación Básica** ⭐ Fundamentos
 
+Ubicación: `courses/01-programacion-basica/`
+
+Temas cubiertos:
+- Variables y tipos de datos
+- Condicionales (if/else, switch)
+- Ciclos (for, while, do-while)
+- Funciones
+- Arrays y objetos
+- Ejercicios integradores
+
+```bash
+# Ejecutar ejemplos
+cd courses/01-programacion-basica
+pnpm dev sections/01-variables-y-tipos.ts
+```
+
+**Estructura:**
 ```
 sections/
 ├── 01-variables-y-tipos.ts           # Tipos básicos y variables
@@ -123,279 +150,198 @@ sections/
 ├── 10-objetos.ts                     # Objetos y clases
 ├── 11-ejercicios-integradores.ts     # Ejercicios que combinan todo
 └── examples/                         # Ejemplos adicionales
-    ├── array.ts                      # Ejemplo básico de arrays
-    ├── array-objects.ts              # Arrays con objetos
-    ├── clases.ts                     # Ejemplo de clases
-    ├── import-export.ts              # Módulos y exportaciones
-    └── object-literal.ts             # Objetos literales
+
+tareas/
+├── tarea-1.ts  # Conversión de unidades
+├── tarea-2.ts  # Conversión km a millas
+├── tarea-3.ts  # Área de círculo
+├── tarea-4.ts  # Números pares
+├── tarea-5.ts  # Factorial
+├── tarea-6.ts  # Suma de arrays
+├── tarea-7.ts  # Búsqueda en arrays
+├── tarea-8.ts  # Manipulación de strings
+└── tarea-9.ts  # Funciones matemáticas
 ```
 
-### **📝 tarea/ - Ejercicios Prácticos**
+### **Curso 2: Introducción a JavaScript para React** ⚛️
 
-```
-tarea/
-├── tarea-1.ts            # Conversión de unidades
-├── tarea-2.ts            # Conversión kilómetros a millas
-├── tarea-3.ts            # Cálculo de área de círculo
-├── tarea-4.ts            # Verificación de números pares
-├── tarea-5.ts            # Cálculo de factorial
-├── tarea-6.ts            # Suma de arrays
-├── tarea-7.ts            # Búsqueda en arrays
-├── tarea-8.ts            # Manipulación de strings
-└── tarea-9.ts            # Funciones matemáticas
-```
+Ubicación: `courses/02-introduccion-js-react/`
 
-### **🛠️ helpers/ - Funciones Auxiliares**
-
-```
-helpers/
-├── math-helpers.ts       # Operaciones matemáticas
-└── print-multiplication-table.ts # Tabla de multiplicar
-```
-
-## 🚀 Configuración del Entorno
-
-### Prerrequisitos
-
-- [Node.js](https://nodejs.org/) (versión 16 o superior)
-- [npm](https://www.npmjs.com/) o [pnpm](https://pnpm.io/)
-
-### Instalación
-
-1. Clona este repositorio:
+Temas cubiertos:
+- Variables (let, const)
+- Tipos de datos
+- Objetos y destructuring
+- Arrays y métodos
+- Funciones (declaration, expression, arrow)
+- Array methods (map, filter, reduce)
+- Condicionales avanzados
+- ES Modules
+- Fetch API (Promises, Async/Await)
+- DOM (selección, manipulación, eventos)
+- Validación de formularios
 
 ```bash
-git clone https://github.com/SoyAlejoDev/progra-101.git
-cd progra-101
+# Ejecutar ejemplos
+cd courses/02-introduccion-js-react
+pnpm dev js/03-variables.ts
 ```
 
-2. Instala las dependencias:
+### **Curso 3: TypeScript Avanzado** 🔷
+
+Ubicación: `courses/03-typescript/`
+
+Temas cubiertos:
+- Tipos básicos (string, number, boolean, any, void, never)
+- Arrays y tuplas
+- Enums
+- Funciones y parámetros
+- Objetos y tipos personalizados
+- Union types
+- Interfaces
+- Clases (herencia, abstractas, private constructors)
+- Namespaces
+- Genéricos (Generics)
+- Decoradores
+- ES6 features
 
 ```bash
-npm install
-# o si usas pnpm
-pnpm install
+# Ejecutar ejemplos
+cd courses/03-typescript
+pnpm dev app.ts
 ```
-
-## ▶️ Cómo Ejecutar los Ejemplos
-
-Cada archivo en la carpeta `sections/` es un ejemplo independiente que puedes ejecutar. Usa el comando:
-
-```bash
-# Para ejecutar un ejemplo específico
-npx ts-node sections/01-variables-y-tipos.ts
-
-# Para ejecutar con watch mode (se reinicia automáticamente al cambiar)
-npm run dev:watch
-```
-
-### Scripts Disponibles
-
-- `npm run dev`: Ejecuta el archivo principal `app.ts`
-- `npm run dev:watch`: Ejecuta en modo watch para desarrollo
-
-## 🗂️ Orden de Estudio Recomendado
-
-Sigue este orden para un aprendizaje progresivo y efectivo:
-
-### 📖 **FASE 1: FUNDAMENTOS** (Semanas 1-2)
-
-#### 1. `01-variables-y-tipos.ts` - Variables y Tipos Básicos ⭐
-
-Aprende sobre los tipos de datos fundamentales en TypeScript/JavaScript:
-
-- **Strings**: Manipulación de texto con template literals
-- **Numbers**: Operaciones numéricas
-- **Booleans**: Valores verdadero/falso
-
-**Ejemplo clave:**
-
-```typescript
-let fullName: string = `${firstName} ${lastName}`;
-let result: number = number1 + number2;
-let isActive: boolean = true;
-```
-
-#### 2. `02-condicionales-if-else.ts` - Condicionales Básicos ⭐
-
-Comprende cómo tomar decisiones en tu código usando estructuras condicionales.
-
-**Conceptos:**
-
-- Uso de `if`, `else if`, y `else`
-- Evaluación de expresiones booleanas
-- Lógica de toma de decisiones
-
-#### 3. `03-condicionales-calificaciones.ts` - Evaluación con Calificaciones ⭐
-
-Aplicación práctica de condicionales para asignar letras de calificación.
-
-**Escala de calificaciones:**
-
-- A ≥ 90
-- B ≥ 80
-- C ≥ 70
-- D ≥ 60
-- F < 60
-
-### 🔄 **FASE 2: CONTROL DE FLUJO** (Semanas 3-4)
-
-#### 4. `04-switch.ts` - Sentencia Switch ⭐
-
-Alternativa a los if-else cuando tienes múltiples opciones.
-
-**Ejemplo:** Días de la semana usando switch.
-
-#### 5. `05-ciclos-for.ts` - Ciclo For ⭐⭐
-
-El ciclo más común para iteraciones controladas.
-
-**Conceptos:**
-
-- Inicialización, condición y actualización
-- Uso de `continue` para saltar iteraciones
-
-#### 6. `06-ciclos-while-do-while.ts` - Ciclos While y Do-While ⭐⭐
-
-Ciclos condicionales que se ejecutan mientras una condición sea verdadera.
-
-**Diferencias:**
-
-- **while**: Evalúa la condición ANTES de ejecutar
-- **do-while**: Ejecuta AL MENOS UNA VEZ y luego evalúa
-
-**Ejemplo:** Simulación de nivel de gasolina en un tanque.
-
-#### 7. `07-bucles-tabla-multiplicar.ts` - Aplicación de Bucles ⭐⭐
-
-Aplicación práctica de bucles para generar tablas de multiplicar.
-
-### 🛠️ **FASE 3: FUNCIONES Y ESTRUCTURAS DE DATOS** (Semanas 5-6)
-
-#### 8. `08-funciones-basicas.ts` - Funciones Básicas ⭐⭐
-
-Introducción a las funciones como bloques de código reutilizables.
-
-**Conceptos:**
-
-- Declaración de funciones
-- Llamadas a funciones
-- Variables locales vs globales
-
-#### 9. `09-arrays.ts` - Arrays y Operaciones ⭐⭐⭐
-
-Trabaja con arreglos y sus métodos principales.
-
-**Conceptos:**
-
-- Crear y acceder a arrays
-- Agregar/eliminar elementos (push, pop, shift, unshift)
-- Recorrer arrays (for, forEach)
-- Operaciones comunes (filter, includes, indexOf)
-
-#### 10. `10-objetos.ts` - Objetos y Clases ⭐⭐⭐
-
-Aprende sobre objetos, propiedades y programación orientada a objetos.
-
-**Conceptos:**
-
-- Crear objetos literales
-- Propiedades y métodos
-- Clases y constructores
-- Interfaces en TypeScript
-
-### 🎯 **FASE 4: PROYECTOS INTEGRADORES** (Semanas 7-8)
-
-#### 11. `11-ejercicios-integradores.ts` - Ejercicios que Combinan Todo ⭐⭐⭐⭐
-
-Proyectos completos que integran todos los conceptos aprendidos.
-
-**Ejercicios incluidos:**
-
-- **Sistema de Biblioteca**: Gestión de libros con arrays y objetos
-- **Sistema de Calificaciones**: Estudiantes con calificaciones ponderadas
-- **Juego de Adivinanza**: Lógica de juego con bucles y condicionales
-
-## 📚 Tareas y Ejercicios Prácticos
-
-La carpeta `tarea/` contiene ejercicios adicionales para practicar los conceptos aprendidos. Cada archivo `tarea-X.ts` incluye una función específica que resuelve un problema común:
-
-- `tarea-1.ts`: Conversión de libras a kilogramos
-- `tarea-2.ts`: Conversión de kilómetros a millas
-- `tarea-3.ts`: Cálculo del área de un círculo
-- `tarea-4.ts`: Verificación de números pares
-- `tarea-5.ts`: Cálculo de factorial
-- `tarea-6.ts`: Suma de elementos en un array
-- `tarea-7.ts`: Búsqueda de elementos en arrays
-- `tarea-8.ts`: Manipulación de cadenas de texto
-- `tarea-9.ts`: Funciones matemáticas avanzadas
-
-Cada tarea incluye:
-
-- Una descripción del problema
-- Una función exportable con la solución
-- Ejemplos de uso con console.log
-- Código comentado para facilitar el aprendizaje
-
-## � Consejos para Estudiantes
-
-1. **Lee el código**: Antes de ejecutar, intenta predecir qué hará cada línea.
-
-2. **Modifica y experimenta**: Cambia los valores y observa cómo afectan el resultado.
-
-3. **Ejecuta paso a paso**: Usa `console.log()` para ver el flujo de ejecución.
-
-4. **Comenta el código**: Agrega tus propios comentarios explicando qué hace cada parte.
-
-5. **Practica en paralelo**: Crea tus propios archivos .ts con variaciones de estos ejemplos.
-
-## 🛠️ Tecnologías Utilizadas
-
-- **TypeScript**: Para tipado estático y mejor desarrollo
-- **Node.js**: Entorno de ejecución
-- **ts-node**: Para ejecutar TypeScript directamente
-- **nodemon**: Para desarrollo con recarga automática
-
-## 🎯 Proyectos Sugeridos para Practicar
-
-Después de completar todas las secciones, intenta estos proyectos:
-
-### **Proyecto 1: Calculadora Interactiva** ⭐⭐
-
-- Crea una calculadora que tome dos números y una operación
-- Usa condicionales para validar operaciones
-- Implementa funciones para cada operación matemática
-
-### **Proyecto 2: Lista de Tareas (To-Do List)** ⭐⭐⭐
-
-- Sistema para agregar, eliminar y marcar tareas como completadas
-- Usa arrays para almacenar las tareas
-- Implementa búsqueda y filtrado
-
-### **Proyecto 3: Sistema de Inventario** ⭐⭐⭐⭐
-
-- Gestiona productos con nombre, precio, stock y categoría
-- Implementa funciones para agregar, vender y buscar productos
-- Usa objetos y arrays para organizar los datos
-
-### **Proyecto 4: Juego de Batalla Naval** ⭐⭐⭐⭐⭐
-
-- Juego donde dos jugadores colocan barcos y se atacan
-- Usa arrays bidimensionales para el tablero
-- Implementa lógica de turnos y validaciones
-
-## 📝 Notas Importantes
-
-- Todos los ejemplos están en español para facilitar el aprendizaje
-- El código está diseñado para ser simple y autodidacta
-- Cada sección es independiente y puede estudiarse por separado
-- Los comentarios explican qué hace cada parte del código
-- Los ejercicios están ordenados por dificultad creciente (⭐)
-
-## 🤝 Contribuciones
-
-Si encuentras errores o quieres agregar más ejemplos, ¡las contribuciones son bienvenidas! Crea un issue o envía un pull request.
 
 ---
 
-¡Feliz aprendizaje! Recuerda que la programación se aprende practicando. ¡Manos a la obra! 🚀</content>
+## 🎮 **Proyectos**
+
+### **🎯 HangIng - Juego del Ahorcado**
+
+**Ubicación:** `apps/hanging/`  
+**Tecnologías:** React 19 + TypeScript + Vite  
+**Demo:** [https://soyalejodev.github.io/progra-101/](https://soyalejodev.github.io/progra-101/)
+
+Aprende:
+- Componentes React
+- Manejo de estado (useState)
+- Efectos secundarios (useEffect)
+- Eventos y callbacks
+- Lógica de juego
+- Custom hooks
+
+```bash
+# Desarrollo
+pnpm dev
+
+# Build
+pnpm build
+
+# Deploy
+pnpm deploy
+```
+
+---
+
+## 🛠️ **Tecnologías Utilizadas**
+
+### Core
+- **TypeScript** - Tipado estático
+- **Node.js** - Entorno de ejecución
+- **pnpm** - Gestor de paquetes y workspaces
+
+### Frontend
+- **React 19** - Biblioteca UI
+- **Vite** - Build tool
+- **ESLint** - Linter
+
+### Herramientas de Desarrollo
+- **ts-node** - Ejecutar TypeScript directamente
+- **nodemon** - Recarga automática
+- **gh-pages** - Despliegue a GitHub Pages
+
+---
+
+## 📖 **Ruta de Aprendizaje Recomendada**
+
+```
+🎯 FASE 1: Fundamentos (Semanas 1-2)
+   └── courses/01-programacion-basica/
+       ├── 01-variables-y-tipos.ts
+       ├── 02-condicionales-if-else.ts
+       ├── 05-ciclos-for.ts
+       └── 08-funciones-basicas.ts
+
+🎯 FASE 2: JavaScript Moderno (Semanas 3-4)
+   └── courses/02-introduccion-js-react/
+       ├── js/03-variables.ts - js/05-tipos.ts
+       ├── js/06-objetos.ts - js/09-unir-objetos.ts
+       ├── js/11-arrays.ts - js/13-destructuring-arrays.ts
+       └── js/16-funciones.ts - js/19-funciones-retorno.ts
+
+🎯 FASE 3: Arrays y Async (Semanas 5-6)
+   └── courses/02-introduccion-js-react/
+       ├── js/20-array-methods.ts
+       ├── js/31-fetch-promises.ts
+       └── js/32-fetch-async-await.ts
+
+🎯 FASE 4: DOM y Formularios (Semanas 7-8)
+   └── courses/02-introduccion-js-react/
+       ├── js/34-dom-seleccion.ts
+       ├── js/36-eventos-click.ts
+       └── js/39-validacion-formularios.ts
+
+🎯 FASE 5: TypeScript (Semanas 9-12)
+   └── courses/03-typescript/
+       ├── tipos/
+       ├── funciones/
+       ├── objetos/
+       ├── clases/
+       └── interfaces/
+
+🎯 FASE 6: Proyecto Final (Semanas 13-14)
+   └── apps/hanging/
+       └── ¡Crear tu propia versión!
+```
+
+---
+
+## 🤝 **Contribuciones**
+
+Si encontrás errores o querés agregar más ejemplos, ¡las contribuciones son bienvenidas! 
+
+1. Fork el repositorio
+2. Creá una rama: `git checkout -b feature/nueva-funcionalidad`
+3. Commiteá tus cambios: `git commit -am 'Agrego nueva funcionalidad'`
+4. Push a la rama: `git push origin feature/nueva-funcionalidad`
+5. Creá un Pull Request
+
+---
+
+## 📝 **Notas Importantes**
+
+- Todos los ejemplos están en español para facilitar el aprendizaje
+- El código está diseñado para ser simple y autodidacta
+- Cada curso es independiente y puede estudiarse por separado
+- Los comentarios explican qué hace cada parte del código
+- Los ejercicios están ordenados por dificultad creciente (⭐)
+
+---
+
+## 📄 **Licencia**
+
+Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
+
+---
+
+## 🙏 **Agradecimientos**
+
+- A todos los estudiantes que practican y mejoran cada día
+- A la comunidad de desarrolladores que comparte conocimiento
+- A los creadores de contenido educativo de programación
+
+---
+
+¡Feliz aprendizaje! Recuerda que la programación se aprende practicando. ¡Manos a la obra! 🚀
+
+<p align="center">
+  <strong>Hecho con ❤️ para la comunidad de desarrolladores</strong>
+</p>

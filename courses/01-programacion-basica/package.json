@@ -1,0 +1,18 @@
+{
+  "name": "@progra-101/programacion-basica",
+  "version": "1.0.0",
+  "description": "Curso de Programación Básica - Fundamentos de JavaScript/TypeScript",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon --watch './**/*.ts' --exec 'ts-node'",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.1",
+    "nodemon": "^3.1.9",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3"
+  }
+}
