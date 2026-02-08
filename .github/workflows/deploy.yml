@@ -30,8 +30,7 @@ jobs:
         
     - name: Setup pnpm
       uses: pnpm/action-setup@v4
-      with:
-        version: 9.15.4
+      # Lee la versión automáticamente del package.json (packageManager)
 
     - name: Get pnpm store directory
       shell: bash
@@ -49,8 +48,8 @@ jobs:
     - name: Install dependencies
       run: pnpm install --frozen-lockfile
 
-    - name: Build
-      run: pnpm build
+    - name: Build Hanging App
+      run: pnpm --filter hanging build
 
     - name: Setup Pages
       uses: actions/configure-pages@v4
